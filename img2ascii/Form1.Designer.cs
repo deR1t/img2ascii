@@ -51,12 +51,18 @@
             this.LoadPalDiag = new System.Windows.Forms.OpenFileDialog();
             this.BrightnessSlider = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yWOTOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.ContrastSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FontSizeBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.YUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HueSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BrightnessSlider)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PaletteTxt
@@ -76,17 +82,18 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ImageTxt.BackColor = System.Drawing.Color.Black;
-            this.ImageTxt.Font = new System.Drawing.Font("Cascadia Code", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ImageTxt.Font = new System.Drawing.Font("Cascadia Code", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ImageTxt.ForeColor = System.Drawing.Color.White;
             this.ImageTxt.HideSelection = false;
-            this.ImageTxt.Location = new System.Drawing.Point(310, 12);
+            this.ImageTxt.Location = new System.Drawing.Point(310, 28);
             this.ImageTxt.MaxLength = 1000000000;
             this.ImageTxt.Multiline = true;
             this.ImageTxt.Name = "ImageTxt";
             this.ImageTxt.ReadOnly = true;
             this.ImageTxt.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.ImageTxt.Size = new System.Drawing.Size(323, 388);
+            this.ImageTxt.Size = new System.Drawing.Size(323, 372);
             this.ImageTxt.TabIndex = 1;
+            this.ImageTxt.Text = "Load an image to see some magic!";
             this.ImageTxt.WordWrap = false;
             // 
             // label1
@@ -124,7 +131,7 @@
             // LoadImageButton
             // 
             this.LoadImageButton.BackColor = System.Drawing.SystemColors.Info;
-            this.LoadImageButton.Location = new System.Drawing.Point(210, 12);
+            this.LoadImageButton.Location = new System.Drawing.Point(210, 28);
             this.LoadImageButton.Name = "LoadImageButton";
             this.LoadImageButton.Size = new System.Drawing.Size(94, 23);
             this.LoadImageButton.TabIndex = 4;
@@ -164,7 +171,7 @@
             // FontSizeBar
             // 
             this.FontSizeBar.LargeChange = 1;
-            this.FontSizeBar.Location = new System.Drawing.Point(200, 41);
+            this.FontSizeBar.Location = new System.Drawing.Point(200, 57);
             this.FontSizeBar.Maximum = 20;
             this.FontSizeBar.Minimum = 1;
             this.FontSizeBar.Name = "FontSizeBar";
@@ -176,7 +183,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(227, 71);
+            this.label4.Location = new System.Drawing.Point(227, 87);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 15);
             this.label4.TabIndex = 6;
@@ -185,7 +192,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 12);
+            this.label5.Location = new System.Drawing.Point(8, 35);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 15);
             this.label5.TabIndex = 7;
@@ -194,7 +201,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 40);
+            this.label6.Location = new System.Drawing.Point(8, 63);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(37, 15);
             this.label6.TabIndex = 7;
@@ -208,7 +215,7 @@
             0,
             0,
             65536});
-            this.XUpDown.Location = new System.Drawing.Point(55, 7);
+            this.XUpDown.Location = new System.Drawing.Point(51, 30);
             this.XUpDown.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -237,7 +244,7 @@
             0,
             0,
             65536});
-            this.YUpDown.Location = new System.Drawing.Point(55, 36);
+            this.YUpDown.Location = new System.Drawing.Point(51, 59);
             this.YUpDown.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -261,7 +268,7 @@
             // CheckAbsolute
             // 
             this.CheckAbsolute.AutoSize = true;
-            this.CheckAbsolute.Location = new System.Drawing.Point(12, 65);
+            this.CheckAbsolute.Location = new System.Drawing.Point(8, 88);
             this.CheckAbsolute.Name = "CheckAbsolute";
             this.CheckAbsolute.Size = new System.Drawing.Size(73, 19);
             this.CheckAbsolute.TabIndex = 9;
@@ -271,7 +278,7 @@
             // InvertBox
             // 
             this.InvertBox.AutoSize = true;
-            this.InvertBox.Location = new System.Drawing.Point(12, 90);
+            this.InvertBox.Location = new System.Drawing.Point(8, 113);
             this.InvertBox.Name = "InvertBox";
             this.InvertBox.Size = new System.Drawing.Size(96, 19);
             this.InvertBox.TabIndex = 9;
@@ -334,6 +341,46 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Brightness";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.White;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(645, 24);
+            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // menuToolStripMenuItem
+            // 
+            this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.yWOTOptionsToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.exitToolStripMenuItem});
+            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.menuToolStripMenuItem.Text = "Menu";
+            // 
+            // yWOTOptionsToolStripMenuItem
+            // 
+            this.yWOTOptionsToolStripMenuItem.Name = "yWOTOptionsToolStripMenuItem";
+            this.yWOTOptionsToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.yWOTOptionsToolStripMenuItem.Text = "YWOT Options...";
+            this.yWOTOptionsToolStripMenuItem.Click += new System.EventHandler(this.yWOTOptionsToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(157, 6);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -359,6 +406,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ImageTxt);
             this.Controls.Add(this.PaletteTxt);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(661, 451);
             this.Name = "Form1";
             this.Text = "text2ascii";
@@ -369,6 +418,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.YUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HueSlider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BrightnessSlider)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -377,7 +428,6 @@
         #endregion
 
         private TextBox PaletteTxt;
-        private TextBox ImageTxt;
         private Label label1;
         private Button LoadPalFileButton;
         private Button SavePalButton;
@@ -399,5 +449,11 @@
         private OpenFileDialog LoadPalDiag;
         private TrackBar BrightnessSlider;
         private Label label3;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem menuToolStripMenuItem;
+        private ToolStripMenuItem yWOTOptionsToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripMenuItem exitToolStripMenuItem;
+        public TextBox ImageTxt;
     }
 }

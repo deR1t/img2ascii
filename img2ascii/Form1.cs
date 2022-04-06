@@ -13,10 +13,12 @@ namespace img2ascii
 
         Image<Rgba32>? LoadedImage;
         Image<Rgba32>? ImageToProcess;
+        Form2 YWOTPanel = new Form2();
 
         public Form1()
         {
             InitializeComponent();
+            YWOTPanel.form1 = this;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -34,7 +36,17 @@ namespace img2ascii
         private void OpenImageDiag_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
         {
             if (e.Cancel) { return; }
-            LoadedImage = Image.Load<Rgba32>(OpenImageDiag.FileName);
+
+            try
+            {
+                LoadedImage = Image.Load<Rgba32>(OpenImageDiag.FileName);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            
             ProcessImage();
         }
 
@@ -177,5 +189,15 @@ namespace img2ascii
             file.Close();
         }
 
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Close the program.
+            Environment.Exit(0);
+        }
+
+        private void yWOTOptionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            YWOTPanel.Show();
+        }
     }
 }
