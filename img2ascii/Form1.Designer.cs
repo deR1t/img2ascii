@@ -37,7 +37,6 @@
             this.ContrastSlider = new System.Windows.Forms.TrackBar();
             this.label2 = new System.Windows.Forms.Label();
             this.OpenImageDiag = new System.Windows.Forms.OpenFileDialog();
-            this.FontSizeBar = new System.Windows.Forms.TrackBar();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -45,8 +44,6 @@
             this.YUpDown = new System.Windows.Forms.NumericUpDown();
             this.CheckAbsolute = new System.Windows.Forms.CheckBox();
             this.InvertBox = new System.Windows.Forms.CheckBox();
-            this.HueSlider = new System.Windows.Forms.TrackBar();
-            this.label7 = new System.Windows.Forms.Label();
             this.SavePalDiag = new System.Windows.Forms.SaveFileDialog();
             this.LoadPalDiag = new System.Windows.Forms.OpenFileDialog();
             this.BrightnessSlider = new System.Windows.Forms.TrackBar();
@@ -56,13 +53,13 @@
             this.yWOTOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FontSizeUpDown = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.ContrastSlider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FontSizeBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.YUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HueSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BrightnessSlider)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FontSizeUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // PaletteTxt
@@ -143,10 +140,10 @@
             // 
             this.ContrastSlider.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ContrastSlider.LargeChange = 10;
-            this.ContrastSlider.Location = new System.Drawing.Point(200, 282);
+            this.ContrastSlider.Location = new System.Drawing.Point(12, 282);
             this.ContrastSlider.Maximum = 400;
             this.ContrastSlider.Name = "ContrastSlider";
-            this.ContrastSlider.Size = new System.Drawing.Size(104, 45);
+            this.ContrastSlider.Size = new System.Drawing.Size(292, 45);
             this.ContrastSlider.SmallChange = 2;
             this.ContrastSlider.TabIndex = 5;
             this.ContrastSlider.Value = 100;
@@ -157,7 +154,7 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(225, 312);
+            this.label2.Location = new System.Drawing.Point(132, 312);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 15);
             this.label2.TabIndex = 6;
@@ -168,22 +165,10 @@
             this.OpenImageDiag.FileName = "OpenImage";
             this.OpenImageDiag.FileOk += new System.ComponentModel.CancelEventHandler(this.OpenImageDiag_FileOk);
             // 
-            // FontSizeBar
-            // 
-            this.FontSizeBar.LargeChange = 1;
-            this.FontSizeBar.Location = new System.Drawing.Point(200, 57);
-            this.FontSizeBar.Maximum = 20;
-            this.FontSizeBar.Minimum = 1;
-            this.FontSizeBar.Name = "FontSizeBar";
-            this.FontSizeBar.Size = new System.Drawing.Size(104, 45);
-            this.FontSizeBar.TabIndex = 5;
-            this.FontSizeBar.Value = 7;
-            this.FontSizeBar.Scroll += new System.EventHandler(this.trackBar1_Scroll);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(227, 87);
+            this.label4.Location = new System.Drawing.Point(150, 63);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 15);
             this.label4.TabIndex = 6;
@@ -211,10 +196,10 @@
             // 
             this.XUpDown.DecimalPlaces = 2;
             this.XUpDown.Increment = new decimal(new int[] {
-            1,
+            15,
             0,
             0,
-            65536});
+            0});
             this.XUpDown.Location = new System.Drawing.Point(51, 30);
             this.XUpDown.Maximum = new decimal(new int[] {
             100000,
@@ -225,12 +210,12 @@
             5,
             0,
             0,
-            196608});
+            131072});
             this.XUpDown.Name = "XUpDown";
             this.XUpDown.Size = new System.Drawing.Size(72, 23);
             this.XUpDown.TabIndex = 8;
             this.XUpDown.Value = new decimal(new int[] {
-            1,
+            100,
             0,
             0,
             0});
@@ -240,10 +225,10 @@
             // 
             this.YUpDown.DecimalPlaces = 2;
             this.YUpDown.Increment = new decimal(new int[] {
-            1,
+            15,
             0,
             0,
-            65536});
+            0});
             this.YUpDown.Location = new System.Drawing.Point(51, 59);
             this.YUpDown.Maximum = new decimal(new int[] {
             100000,
@@ -254,15 +239,15 @@
             5,
             0,
             0,
-            196608});
+            131072});
             this.YUpDown.Name = "YUpDown";
             this.YUpDown.Size = new System.Drawing.Size(72, 23);
             this.YUpDown.TabIndex = 8;
             this.YUpDown.Value = new decimal(new int[] {
-            5,
+            50,
             0,
             0,
-            65536});
+            0});
             this.YUpDown.ValueChanged += new System.EventHandler(this.YUpDown_ValueChanged);
             // 
             // CheckAbsolute
@@ -286,27 +271,6 @@
             this.InvertBox.UseVisualStyleBackColor = true;
             this.InvertBox.CheckedChanged += new System.EventHandler(this.InvertBox_CheckedChanged);
             // 
-            // HueSlider
-            // 
-            this.HueSlider.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.HueSlider.LargeChange = 30;
-            this.HueSlider.Location = new System.Drawing.Point(200, 183);
-            this.HueSlider.Maximum = 360;
-            this.HueSlider.Name = "HueSlider";
-            this.HueSlider.Size = new System.Drawing.Size(104, 45);
-            this.HueSlider.TabIndex = 5;
-            this.HueSlider.Scroll += new System.EventHandler(this.HueSlider_Scroll);
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(220, 213);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 15);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Hue Shifter";
-            // 
             // SavePalDiag
             // 
             this.SavePalDiag.FileName = "new_palette.pal";
@@ -321,10 +285,10 @@
             // 
             this.BrightnessSlider.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BrightnessSlider.LargeChange = 10;
-            this.BrightnessSlider.Location = new System.Drawing.Point(200, 234);
+            this.BrightnessSlider.Location = new System.Drawing.Point(12, 234);
             this.BrightnessSlider.Maximum = 400;
             this.BrightnessSlider.Name = "BrightnessSlider";
-            this.BrightnessSlider.Size = new System.Drawing.Size(104, 45);
+            this.BrightnessSlider.Size = new System.Drawing.Size(292, 45);
             this.BrightnessSlider.SmallChange = 2;
             this.BrightnessSlider.TabIndex = 5;
             this.BrightnessSlider.Value = 100;
@@ -335,7 +299,7 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(225, 264);
+            this.label3.Location = new System.Drawing.Point(128, 264);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 15);
             this.label3.TabIndex = 6;
@@ -381,23 +345,40 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // FontSizeUpDown
+            // 
+            this.FontSizeUpDown.DecimalPlaces = 1;
+            this.FontSizeUpDown.Location = new System.Drawing.Point(210, 59);
+            this.FontSizeUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.FontSizeUpDown.Name = "FontSizeUpDown";
+            this.FontSizeUpDown.Size = new System.Drawing.Size(94, 23);
+            this.FontSizeUpDown.TabIndex = 11;
+            this.FontSizeUpDown.Value = new decimal(new int[] {
+            7,
+            0,
+            0,
+            0});
+            this.FontSizeUpDown.ValueChanged += new System.EventHandler(this.trackBar1_Scroll);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(645, 412);
+            this.Controls.Add(this.FontSizeUpDown);
             this.Controls.Add(this.InvertBox);
             this.Controls.Add(this.CheckAbsolute);
             this.Controls.Add(this.YUpDown);
             this.Controls.Add(this.XUpDown);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.HueSlider);
-            this.Controls.Add(this.FontSizeBar);
             this.Controls.Add(this.BrightnessSlider);
             this.Controls.Add(this.ContrastSlider);
             this.Controls.Add(this.LoadImageButton);
@@ -413,13 +394,12 @@
             this.Text = "text2ascii";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ContrastSlider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FontSizeBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.XUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.YUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HueSlider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BrightnessSlider)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FontSizeUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -435,7 +415,6 @@
         private TrackBar ContrastSlider;
         private Label label2;
         private OpenFileDialog OpenImageDiag;
-        private TrackBar FontSizeBar;
         private Label label4;
         private Label label5;
         private Label label6;
@@ -443,8 +422,6 @@
         private NumericUpDown YUpDown;
         private CheckBox CheckAbsolute;
         private CheckBox InvertBox;
-        private TrackBar HueSlider;
-        private Label label7;
         private SaveFileDialog SavePalDiag;
         private OpenFileDialog LoadPalDiag;
         private TrackBar BrightnessSlider;
@@ -455,5 +432,6 @@
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripMenuItem exitToolStripMenuItem;
         public TextBox ImageTxt;
+        private NumericUpDown FontSizeUpDown;
     }
 }

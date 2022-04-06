@@ -72,7 +72,7 @@ namespace img2ascii
             else
             {
                 ImageToProcess.Mutate(ctx => 
-                    ctx.Resize(new Size((int)(LoadedImage.Width * XUpDown.Value), (int)(LoadedImage.Height * YUpDown.Value))));
+                    ctx.Resize(new Size((int)(LoadedImage.Width * XUpDown.Value / 100), (int)(LoadedImage.Height * YUpDown.Value / 100))));
             }
 
             if (InvertBox.Checked)
@@ -87,7 +87,7 @@ namespace img2ascii
                 ImageTxt.BackColor = Color.Black;
             }
 
-            ImageToProcess.Mutate(ctx => ctx.Hue(HueSlider.Value));
+            //ImageToProcess.Mutate(ctx => ctx.Hue(HueSlider.Value));
             ImageToProcess.Mutate(ctx => ctx.Grayscale());
             ImageToProcess.Mutate(ctx => ctx.Brightness((float)BrightnessSlider.Value / 100f));
             ImageToProcess.Mutate(ctx => ctx.Contrast((float)ContrastSlider.Value / 100f));
@@ -130,7 +130,7 @@ namespace img2ascii
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            ImageTxt.Font = new Font("Cascadia Code", FontSizeBar.Value);
+            ImageTxt.Font = new Font("Cascadia Code", (float)FontSizeUpDown.Value);
         }
 
 
