@@ -12,7 +12,9 @@ https://chromedriver.chromium.org/downloads
 
 ## TODO feature list:
 • Dithering
+
 • Text generator
-• Change the relative sizing to be a percent instead
+
 • Change the display font
+
 • Don't use textbox to display the text, use like skiasharp or something and draw it manually
